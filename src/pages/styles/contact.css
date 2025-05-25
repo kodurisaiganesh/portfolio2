@@ -1,0 +1,217 @@
+/* ===============================
+   Base Layout and Components
+================================= */
+
+/* Contact Logo Container */
+.contact-logo-container {
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 25px;
+}
+
+/* Fixed Logo */
+.contact-logo {
+	display: flex;
+	position: fixed;
+	top: 4vh;
+	left: 20px;
+	width: 60px;
+	height: 60px;
+	border: 1px solid white;
+	border-radius: 50%;
+	background-color: #fff;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+	z-index: 999;
+	animation: fadeIn 0.8s ease forwards;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	cursor: pointer;
+}
+
+.contact-logo:hover {
+	transform: scale(1.1) rotate(5deg);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact Section Container */
+.contact-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 120px;
+	padding: 0 20px;
+	animation: fadeUp 0.6s ease forwards;
+}
+
+/* Subtitle Styling */
+.contact-subtitle {
+	width: 100% !important;
+	font-size: 1.2rem;
+	color: #444;
+	margin-bottom: 40px;
+	animation: fadeUp 0.8s ease forwards;
+}
+
+/* Socials Container */
+.socials-container {
+	display: flex;
+	flex-direction: column;
+	margin-top: 80px;
+	gap: 20px;
+}
+
+/* Social Icons Row */
+.contact-socials {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 20px;
+	animation: fadeUp 1s ease forwards;
+}
+
+/* Social Icons Style */
+.contact-socials a {
+	color: var(--primary-color);
+	font-size: 24px;
+	transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-socials a:hover {
+	transform: scale(1.2) rotate(5deg);
+	color: var(--link-color);
+}
+
+/* ===============================
+   Form Styling
+================================= */
+
+.contact-login-form {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	gap: 15px;
+	margin-top: 30px;
+}
+
+.contact-login-form label {
+	font-weight: 600;
+	color: #222;
+}
+
+/* Input & Textarea Styling */
+.contact-login-form input,
+.contact-login-form textarea {
+	padding: 10px;
+	border: 1px solid #bbb;
+	border-radius: 6px;
+	font-size: 1rem;
+	transition: all 0.3s ease;
+	resize: vertical;
+}
+
+/* Hover Animation on Inputs */
+.contact-login-form input:hover,
+.contact-login-form textarea:hover {
+	transform: scale(1.02);
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus Glow Effect */
+.contact-login-form input:focus,
+.contact-login-form textarea:focus {
+	border-color: var(--primary-color);
+	box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+	outline: none;
+}
+
+/* Submit Button */
+.contact-login-form button {
+	background-color: var(--primary-color);
+	color: white;
+	padding: 12px;
+	border: none;
+	border-radius: 6px;
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.contact-login-form button:hover {
+	background-color: var(--link-color);
+}
+
+/* Right Click Shake Animation */
+.contact-login-form button.animate-right-click {
+	animation: shakeButton 0.5s ease;
+}
+
+/* Shake Animation */
+@keyframes shakeButton {
+	0% { transform: translateX(0); }
+	20% { transform: translateX(-4px); }
+	40% { transform: translateX(4px); }
+	60% { transform: translateX(-4px); }
+	80% { transform: translateX(4px); }
+	100% { transform: translateX(0); }
+}
+
+/* Error Message */
+.error-message {
+	color: red;
+	font-size: 0.9rem;
+	margin-top: -10px;
+	margin-bottom: 10px;
+}
+
+.contact-login-form hr {
+	border: none;
+	border-top: 1px solid #ddd;
+	margin: 20px 0;
+}
+
+/* ===============================
+   Animations
+================================= */
+
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* ===============================
+   Responsive Design
+================================= */
+
+@media (max-width: 768px) {
+	.contact-container {
+		margin-top: 80px;
+	}
+
+	.contact-socials {
+		flex-wrap: wrap;
+		gap: 15px;
+	}
+
+	.contact-logo {
+		width: 50px;
+		height: 50px;
+	}
+}

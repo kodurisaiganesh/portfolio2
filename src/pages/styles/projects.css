@@ -1,0 +1,182 @@
+/* Global Styles */
+body {
+	margin: 0;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: #f9f9f9;
+	color: #333;
+	overflow-x: hidden;
+  }
+  
+  /* Logo Container */
+  .projects-logo-container {
+	display: flex;
+	justify-content: flex-start;
+	padding-top: 25px;
+	padding-left: 20px;
+  }
+  
+  /* Circular Logo with Hover + Entrance Animation */
+  .projects-logo {
+	display: flex;
+	position: fixed;
+	top: 4vh;
+	left: 20px;
+	width: 60px;
+	height: 60px;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid white;
+	border-radius: 50%;
+	background-color: #ffffff;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+	cursor: pointer;
+	z-index: 999;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	animation: popIn 0.6s ease-out forwards;
+  }
+  
+  .projects-logo:hover {
+	transform: scale(1.15) rotate(10deg);
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Container for Projects */
+  .projects-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Center content horizontally */
+	height: 100%;
+	margin: 0;
+	padding-top: 120px;
+	padding-left: 20px;
+	padding-right: 20px;
+	gap: 25px;
+  }
+  
+  /* Individual Project Cards */
+  .projects-project {
+	background: linear-gradient(135deg, #ffffff, #f1f1f1);
+	border-radius: 16px;
+	padding: 20px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transition: transform 0.4s ease, box-shadow 0.4s ease;
+	cursor: pointer;
+	opacity: 0;
+	transform: translateY(40px);
+	animation: fadeUp 0.8s ease forwards;
+	max-width: 700px; /* Optional max width for cards */
+  }
+  
+  .projects-project:hover {
+	transform: translateY(-12px) scale(1.03);
+	box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animation Delay for Staggered Entrance */
+  .projects-project:nth-child(1) { animation-delay: 0.2s; }
+  .projects-project:nth-child(2) { animation-delay: 0.4s; }
+  .projects-project:nth-child(3) { animation-delay: 0.6s; }
+  /* Add more as needed */
+  
+  /* Title Styling */
+  .projects-title {
+	font-size: 2.8rem;
+	font-weight: 700;
+	color: #2c3e50;
+	position: relative;
+	max-width: 700px;
+	line-height: 1.2;
+	margin-bottom: 12px;
+	cursor: pointer;
+	transition: color 0.3s ease;
+  
+	display: inline-flex; /* Inline-flex to align icon + text */
+	align-items: center;
+	gap: 10px;
+	justify-content: center; /* Center content horizontally */
+	text-align: center; /* Center text */
+  }
+  
+  /* Simple underline effect on hover */
+  .projects-title:hover {
+	color: #2980b9;
+  }
+  
+  .projects-title::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 3px;
+	bottom: -6px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #2980b9;
+	transition: width 0.3s ease;
+  }
+  
+  .projects-title:hover::after {
+	width: 100%;
+  }
+  
+  /* Subtitle Styling */
+  .projects-subtitle {
+	font-size: 1.15rem;
+	font-weight: 400;
+	color: #555;
+	max-width: 700px;
+	line-height: 1.5;
+	letter-spacing: 0.03em;
+	transition: color 0.3s ease;
+	cursor: default;
+	text-align: center; /* Center text */
+	margin: 0 auto; /* Center block */
+  }
+  
+  .projects-subtitle:hover {
+	color: #2980b9;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 900px) {
+	.projects-container {
+	  padding-top: 90px;
+	}
+  
+	.projects-project {
+	  padding: 16px;
+	}
+  }
+  
+  @media (max-width: 600px) {
+	.projects-container {
+	  padding-top: 60px;
+	  flex-direction: row;
+	  flex-wrap: wrap;
+	  gap: 12px;
+	  justify-content: center;
+	}
+  
+	.projects-project {
+	  width: calc(50% - 12px);
+	}
+  }
+  
+  /* Keyframe Animations */
+  @keyframes fadeUp {
+	to {
+	  opacity: 1;
+	  transform: translateY(0);
+	}
+  }
+  
+  @keyframes popIn {
+	0% {
+	  transform: scale(0.8);
+	  opacity: 0;
+	}
+	100% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  }
+  

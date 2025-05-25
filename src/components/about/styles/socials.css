@@ -1,0 +1,119 @@
+@import "../../../data/styles.css";
+
+/* Container for centering the logo */
+.logo-container {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  padding: 20px 0;
+}
+
+/* Logo styling and hover animation */
+.logo {
+  width: 120px; /* adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Smooth pulse animation keyframes */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* Hover effect: pulse + shadow */
+.logo:hover {
+  animation: pulse 1.2s infinite;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Social and Email wrapper styling */
+.social,
+.email-wrapper {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
+  gap: 15px;
+}
+
+.social a,
+.email-wrapper a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Underline animation for links */
+.social a::after,
+.email-wrapper a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.social a:hover::after,
+.email-wrapper a:hover::after {
+  width: 100%;
+}
+
+.social a:hover,
+.email-wrapper a:hover {
+  color: var(--primary-color);
+}
+
+/* Social icon styling and hover scale */
+.social-icon {
+  font-size: 16px;
+  color: var(--secondary-color);
+  flex-shrink: 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Social text hover color change */
+.social-text {
+  color: var(--secondary-color);
+  padding-left: 30px;
+  margin-top: -10px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.social-text:hover {
+  color: var(--primary-color);
+}
+
+/* Email section divider */
+.email::before {
+  content: "";
+  display: block;
+  padding-top: 20px;
+  border-top: 3px solid #f4f4f5;
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
+.email-wrapper {
+  padding-top: 20px;
+  justify-content: flex-start;
+}
